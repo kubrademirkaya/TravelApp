@@ -12,9 +12,6 @@ class UserViewModel {
     
     var userInfo: UserInfo?
     
-    
-    
-    
     func readFromKeychain() -> String {
         var token = KeychainHelper.standard.read(service: "access-token", account: "ios-class")
         var temp = ""
@@ -44,7 +41,7 @@ class UserViewModel {
         
         let header: HTTPHeaders = ["Authorization" : "Bearer \(readFromKeychain())"]
         
-        NetworkingHelper.shared.getUser(from: url, parameter: param, method: .get, header: header,callback: {(result: Result<UserInfo, Error>) in
+        NetworkingHelper.shared.getData(from: url, parameter: param, method: .get, header: header,callback: {(result: Result<UserInfo, Error>) in
             switch result {
             case .success(let user):
                 self.userInfo = user

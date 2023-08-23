@@ -9,6 +9,12 @@ import UIKit
 import SnapKit
 
 class LoginVC: UIViewController {
+    
+    var user: User?
+    
+    lazy var viewModel: LoginViewModel = {
+        return LoginViewModel()
+    }()
         
     private lazy var imageViewLogo: UIImageView = {
         let imageView = UIImageView()
@@ -20,7 +26,6 @@ class LoginVC: UIViewController {
         let view = UIView()
         view.layer.backgroundColor = Color.lightGray.color.cgColor
         view.frame = CGRect(x: 0, y: 0, width: 390, height: 598)
-        view.roundCorners(corners: .topLeft, radius: 80)
         return view
     }()
     
@@ -54,7 +59,8 @@ class LoginVC: UIViewController {
         text.frame = CGRect(x: 0, y: 0, width: 168, height: 18)
         text.textColor = UIColor(red: 0.663, green: 0.66, blue: 0.66, alpha: 1)
         text.font = UIFont(name: Font.poppinsRegular.font, size: 12)
-        text.text = "developer@bilgeadam.com"
+        text.attributedPlaceholder = NSAttributedString(string: "developer@bilgeadam.com", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+        text.text = "furk@n.dev"
         return text
     }()
     
@@ -80,16 +86,74 @@ class LoginVC: UIViewController {
         text.frame = CGRect(x: 0, y: 0, width: 168, height: 18)
         text.textColor = UIColor(red: 0.663, green: 0.66, blue: 0.66, alpha: 1)
         text.font = UIFont(name: Font.poppinsRegular.font, size: 12)
-        text.text = "***********"
+        text.attributedPlaceholder = NSAttributedString(string: "**********", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+        text.isSecureTextEntry = true
+        text.text = "123123123"
         return text
     }()
     
+    private lazy var buttonLogin: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 342, height: 54)
+        button.backgroundColor = Color.turquoise.color
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Login", for: .normal)
+        button.addTarget(self, action: #selector(buttonLoginTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var viewToSignUp: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: 238, height: 21)
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    private lazy var labelToSignUp: UILabel = {
+        let label = UILabel()
+        label.text = "Don't have any account?"
+        label.textColor = Color.darkGray.color
+        label.font = UIFont(name: Font.poppinsMedium.font, size: 14)
+        label.textAlignment = .left
+        return label
+    }()
+    
+    private lazy var buttonSignUp: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.setTitleColor(Color.darkGray.color, for: .normal)
+        button.setTitle("Sign Up", for: .normal)
+        button.titleLabel?.font = UIFont(name: Font.poppinsMedium.font, size: 14)
+        button.addTarget(self, action: #selector(buttonSignUpTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func buttonLoginTapped() {
+        if let email = textEmail.text, let password = textPassword.text {
+            let user = logInUser(email: email , password: password)
+            viewModel.logIn(user: user)
+            navigationController?.pushViewController(MainTabBarController(), animated: true)
+        }
+    }
+    
+    @objc func buttonSignUpTapped() {
+        navigationController?.pushViewController(SignUpVC(), animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
 
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        viewContent.roundCorners(corners: .topLeft, radius: 80)
+        viewTextEmail.roundCorners(corners: [.bottomLeft,.topLeft,.topRight], radius: 16)
+        viewTextPassword.roundCorners(corners: [.bottomLeft,.topLeft,.topRight], radius: 16)
+        buttonLogin.roundCorners(corners: [.bottomLeft,.topLeft,.topRight], radius: 16)
+        
     }
     
     func setupViews() {
@@ -103,13 +167,18 @@ class LoginVC: UIViewController {
         
         viewContent.addSubviews(labelWelcome,
                                 viewTextEmail,
-                                viewTextPassword)
+                                viewTextPassword,
+                                buttonLogin,
+                                viewToSignUp)
         
         viewTextEmail.addSubviews(labelEmail,
                                   textEmail)
         
         viewTextPassword.addSubviews(labelPassword,
                                      textPassword)
+        
+        viewToSignUp.addSubviews(labelToSignUp,
+                                 buttonSignUp)
         
         setupLayout()
         
@@ -170,5 +239,30 @@ class LoginVC: UIViewController {
             text.leading.equalToSuperview().offset(12)
         }
         
+        buttonLogin.snp.makeConstraints { button in
+            button.top.equalToSuperview().offset(361)
+            button.leading.equalToSuperview().offset(24)
+            button.trailing.equalToSuperview().offset(-24)
+            button.height.equalTo(54)
+        }
+        
+        viewToSignUp.snp.makeConstraints { view in
+            view.bottom.equalToSuperview().offset(-21)
+            view.leading.equalToSuperview().offset(78)
+            view.height.equalTo(21)
+            view.width.equalTo(238)
+        }
+        
+        labelToSignUp.snp.makeConstraints { label in
+            label.centerY.equalToSuperview()
+            label.leading.equalToSuperview()
+        }
+        
+        buttonSignUp.snp.makeConstraints { button in
+            button.centerY.equalToSuperview()
+            button.trailing.equalToSuperview()
+        }
+        
     }
 }
+

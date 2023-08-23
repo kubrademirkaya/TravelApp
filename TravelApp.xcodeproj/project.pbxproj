@@ -28,6 +28,18 @@
 		E015DF8A2A8F9F7F002E8B46 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E015DF862A8F9F7F002E8B46 /* Poppins-SemiBold.ttf */; };
 		E015DF8B2A8F9F7F002E8B46 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E015DF872A8F9F7F002E8B46 /* Poppins-Regular.ttf */; };
 		E015DF8C2A8F9F7F002E8B46 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E015DF882A8F9F7F002E8B46 /* Poppins-Medium.ttf */; };
+		E015DF8E2A92BFD0002E8B46 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015DF8D2A92BFD0002E8B46 /* MainTabBarController.swift */; };
+		E015DF902A92BFE8002E8B46 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015DF8F2A92BFE8002E8B46 /* SignUpVC.swift */; };
+		E015DF942A930E69002E8B46 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015DF932A930E69002E8B46 /* CustomButton.swift */; };
+		E015DF962A931E8F002E8B46 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015DF952A931E8F002E8B46 /* HomeVC.swift */; };
+		E015DF982A931EA2002E8B46 /* VisitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015DF972A931EA2002E8B46 /* VisitsVC.swift */; };
+		E015DF9A2A931EAF002E8B46 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015DF992A931EAF002E8B46 /* MapVC.swift */; };
+		E015DF9C2A931EBF002E8B46 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015DF9B2A931EBF002E8B46 /* MenuVC.swift */; };
+		E072C2682A948E8100FE1872 /* VisitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2672A948E8100FE1872 /* VisitsViewModel.swift */; };
+		E072C26A2A94CB0600FE1872 /* VisitsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2692A94CB0600FE1872 /* VisitsDetailsVC.swift */; };
+		E072C26E2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C26D2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift */; };
+		E072C2712A9644A800FE1872 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2702A9644A800FE1872 /* Router.swift */; };
+		E07324FA2A9397F900F142CF /* VisitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +64,18 @@
 		E015DF862A8F9F7F002E8B46 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		E015DF872A8F9F7F002E8B46 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		E015DF882A8F9F7F002E8B46 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		E015DF8D2A92BFD0002E8B46 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		E015DF8F2A92BFE8002E8B46 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		E015DF932A930E69002E8B46 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E015DF952A931E8F002E8B46 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E015DF972A931EA2002E8B46 /* VisitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsVC.swift; sourceTree = "<group>"; };
+		E015DF992A931EAF002E8B46 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		E015DF9B2A931EBF002E8B46 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		E072C2672A948E8100FE1872 /* VisitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsViewModel.swift; sourceTree = "<group>"; };
+		E072C2692A94CB0600FE1872 /* VisitsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsDetailsVC.swift; sourceTree = "<group>"; };
+		E072C26D2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E072C2702A9644A800FE1872 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,30 +114,41 @@
 				E015DF682A8F57B3002E8B46 /* Models */,
 				E015DF672A8F57A4002E8B46 /* ViewModels */,
 				E015DF662A8F5793002E8B46 /* CustomComponents */,
-				E015DF642A8F5784002E8B46 /* Networking */,
+				E015DF642A8F5784002E8B46 /* Helpers */,
 				E015DF692A8F57CF002E8B46 /* Utils */,
 				E015DF7C2A8F59AC002E8B46 /* Resources */,
 				E015DF4A2A8F5631002E8B46 /* AppDelegate.swift */,
 				E015DF4C2A8F5631002E8B46 /* SceneDelegate.swift */,
-				E015DF532A8F5632002E8B46 /* Assets.xcassets */,
 				E015DF552A8F5632002E8B46 /* LaunchScreen.storyboard */,
 				E015DF582A8F5632002E8B46 /* Info.plist */,
+				E015DF532A8F5632002E8B46 /* Assets.xcassets */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
 		};
-		E015DF642A8F5784002E8B46 /* Networking */ = {
+		E015DF642A8F5784002E8B46 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				E015DF6A2A8F57F5002E8B46 /* NetworkingHelper.swift */,
+				E015DF6C2A8F57FB002E8B46 /* KeychainHelper.swift */,
+				E072C2702A9644A800FE1872 /* Router.swift */,
 			);
-			path = Networking;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E015DF652A8F578D002E8B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E015DF7A2A8F5859002E8B46 /* LoginVC.swift */,
+				E015DF8F2A92BFE8002E8B46 /* SignUpVC.swift */,
+				E015DF8D2A92BFD0002E8B46 /* MainTabBarController.swift */,
+				E015DF952A931E8F002E8B46 /* HomeVC.swift */,
+				E015DF972A931EA2002E8B46 /* VisitsVC.swift */,
+				E015DF992A931EAF002E8B46 /* MapVC.swift */,
+				E015DF9B2A931EBF002E8B46 /* MenuVC.swift */,
+				E072C2692A94CB0600FE1872 /* VisitsDetailsVC.swift */,
+				E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */,
+				E072C26D2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E015DF832A8F6AEA002E8B46 /* CustomTextView.swift */,
+				E015DF932A930E69002E8B46 /* CustomButton.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -132,6 +168,7 @@
 				E015DF762A8F583F002E8B46 /* LoginViewModel.swift */,
 				E015DF742A8F583B002E8B46 /* SignUpViewModel.swift */,
 				E015DF782A8F5844002E8B46 /* UserViewModel.swift */,
+				E072C2672A948E8100FE1872 /* VisitsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -149,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				E015DF6E2A8F5811002E8B46 /* Extensions.swift */,
-				E015DF6C2A8F57FB002E8B46 /* KeychainHelper.swift */,
 				E015DF812A8F5C20002E8B46 /* Enums.swift */,
 			);
 			path = Utils;
@@ -158,12 +194,20 @@
 		E015DF7C2A8F59AC002E8B46 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E072C26F2A94F11300FE1872 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E072C26F2A94F11300FE1872 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
 				E015DF852A8F9F7F002E8B46 /* Poppins-Bold.ttf */,
 				E015DF882A8F9F7F002E8B46 /* Poppins-Medium.ttf */,
 				E015DF872A8F9F7F002E8B46 /* Poppins-Regular.ttf */,
 				E015DF862A8F9F7F002E8B46 /* Poppins-SemiBold.ttf */,
 			);
-			path = Resources;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,17 +294,29 @@
 			files = (
 				E015DF842A8F6AEA002E8B46 /* CustomTextView.swift in Sources */,
 				E015DF7B2A8F5859002E8B46 /* LoginVC.swift in Sources */,
+				E072C2712A9644A800FE1872 /* Router.swift in Sources */,
 				E015DF6F2A8F5811002E8B46 /* Extensions.swift in Sources */,
 				E015DF6B2A8F57F5002E8B46 /* NetworkingHelper.swift in Sources */,
 				E015DF752A8F583B002E8B46 /* SignUpViewModel.swift in Sources */,
+				E015DF962A931E8F002E8B46 /* HomeVC.swift in Sources */,
 				E015DF792A8F5844002E8B46 /* UserViewModel.swift in Sources */,
 				E015DF712A8F5824002E8B46 /* User.swift in Sources */,
 				E015DF4B2A8F5631002E8B46 /* AppDelegate.swift in Sources */,
+				E015DF9C2A931EBF002E8B46 /* MenuVC.swift in Sources */,
 				E015DF4D2A8F5631002E8B46 /* SceneDelegate.swift in Sources */,
 				E015DF6D2A8F57FB002E8B46 /* KeychainHelper.swift in Sources */,
+				E072C2682A948E8100FE1872 /* VisitsViewModel.swift in Sources */,
+				E015DF9A2A931EAF002E8B46 /* MapVC.swift in Sources */,
+				E015DF8E2A92BFD0002E8B46 /* MainTabBarController.swift in Sources */,
+				E07324FA2A9397F900F142CF /* VisitsCollectionViewCell.swift in Sources */,
 				E015DF732A8F5829002E8B46 /* Response.swift in Sources */,
+				E015DF942A930E69002E8B46 /* CustomButton.swift in Sources */,
+				E072C26A2A94CB0600FE1872 /* VisitsDetailsVC.swift in Sources */,
 				E015DF822A8F5C20002E8B46 /* Enums.swift in Sources */,
+				E015DF902A92BFE8002E8B46 /* SignUpVC.swift in Sources */,
+				E015DF982A931EA2002E8B46 /* VisitsVC.swift in Sources */,
 				E015DF772A8F583F002E8B46 /* LoginViewModel.swift in Sources */,
+				E072C26E2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,7 @@ class NetworkingHelper {
         }
     }
     
-    func getUser<T:Codable>(from apiURL: String, parameter: Parameters, method: HTTPMethod, header: HTTPHeaders,callback: @escaping (Result<T,Error>) -> Void) {
+    func getData<T:Codable>(from apiURL: String, parameter: Parameters, method: HTTPMethod, header: HTTPHeaders,callback: @escaping (Result<T,Error>) -> Void) {
         
         AF.request(apiURL, method: method, parameters: parameter, encoding: URLEncoding.default, headers: header).validate().responseJSON { response in
             switch response.result {
