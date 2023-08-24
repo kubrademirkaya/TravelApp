@@ -131,7 +131,8 @@ class LoginVC: UIViewController {
     @objc func buttonLoginTapped() {
         if let email = textEmail.text, let password = textPassword.text {
             let user = logInUser(email: email , password: password)
-            viewModel.logIn(user: user)
+            //viewModel.logIn(user: user)
+            viewModel.logInRouter(user: user)
             navigationController?.pushViewController(MainTabBarController(), animated: true)
         }
     }

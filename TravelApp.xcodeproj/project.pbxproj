@@ -39,6 +39,8 @@
 		E072C26A2A94CB0600FE1872 /* VisitsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2692A94CB0600FE1872 /* VisitsDetailsVC.swift */; };
 		E072C26E2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C26D2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift */; };
 		E072C2712A9644A800FE1872 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2702A9644A800FE1872 /* Router.swift */; };
+		E072C2742A974E7E00FE1872 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E072C2732A974E7E00FE1872 /* SwiftyJSON */; };
+		E072C2762A976C3000FE1872 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2752A976C3000FE1872 /* MapCollectionViewCell.swift */; };
 		E07324FA2A9397F900F142CF /* VisitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,7 @@
 		E072C2692A94CB0600FE1872 /* VisitsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsDetailsVC.swift; sourceTree = "<group>"; };
 		E072C26D2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E072C2702A9644A800FE1872 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E072C2752A976C3000FE1872 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
 		E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E072C2742A974E7E00FE1872 /* SwiftyJSON in Frameworks */,
 				E015DF602A8F573F002E8B46 /* SnapKit in Frameworks */,
 				E015DF632A8F574A002E8B46 /* Alamofire in Frameworks */,
 			);
@@ -146,6 +150,7 @@
 				E015DF972A931EA2002E8B46 /* VisitsVC.swift */,
 				E015DF992A931EAF002E8B46 /* MapVC.swift */,
 				E015DF9B2A931EBF002E8B46 /* MenuVC.swift */,
+				E072C2752A976C3000FE1872 /* MapCollectionViewCell.swift */,
 				E072C2692A94CB0600FE1872 /* VisitsDetailsVC.swift */,
 				E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */,
 				E072C26D2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift */,
@@ -229,6 +234,7 @@
 			packageProductDependencies = (
 				E015DF5F2A8F573F002E8B46 /* SnapKit */,
 				E015DF622A8F574A002E8B46 /* Alamofire */,
+				E072C2732A974E7E00FE1872 /* SwiftyJSON */,
 			);
 			productName = TravelApp;
 			productReference = E015DF472A8F5631002E8B46 /* TravelApp.app */;
@@ -261,6 +267,7 @@
 			packageReferences = (
 				E015DF5E2A8F573F002E8B46 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E015DF612A8F574A002E8B46 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E072C2722A974E7E00FE1872 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = E015DF482A8F5631002E8B46 /* Products */;
 			projectDirPath = "";
@@ -299,6 +306,7 @@
 				E015DF6B2A8F57F5002E8B46 /* NetworkingHelper.swift in Sources */,
 				E015DF752A8F583B002E8B46 /* SignUpViewModel.swift in Sources */,
 				E015DF962A931E8F002E8B46 /* HomeVC.swift in Sources */,
+				E072C2762A976C3000FE1872 /* MapCollectionViewCell.swift in Sources */,
 				E015DF792A8F5844002E8B46 /* UserViewModel.swift in Sources */,
 				E015DF712A8F5824002E8B46 /* User.swift in Sources */,
 				E015DF4B2A8F5631002E8B46 /* AppDelegate.swift in Sources */,
@@ -544,6 +552,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		E072C2722A974E7E00FE1872 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -556,6 +572,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E015DF612A8F574A002E8B46 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E072C2732A974E7E00FE1872 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E072C2722A974E7E00FE1872 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -32,4 +32,22 @@ class LoginViewModel {
     func saveToKeychain(data:Data) {
         KeychainHelper.standard.save(data, service: "access-token", account: "ios-class")
     }
+    
+    func logInRouter(user: logInUser) {
+        
+        let param: Parameters = [   "email" : user.email,
+                                    "password": user.password]
+        
+        NetworkingHelper.shared.objectRequestRouter(request: Router.postLogIn(parameters: param), callback: {(result: Result<loginResponse, Error>) in
+            switch result {
+            case .success(let token):
+                let data = Data(token.accessToken.utf8)
+                self.saveToKeychain(data: data)
+                print(token)
+            case .failure(let error):
+                print(error)
+            }
+        })
+        
+    }
 }
