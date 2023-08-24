@@ -26,7 +26,6 @@ class VisitsVC: UIViewController {
     private lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-//        layout.sectionInset = UIEdgeInsets(top: 45, left: 0, bottom: 0, right: 0)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         layout.minimumLineSpacing = 16
         cv.backgroundColor = Color.lightGray.color
@@ -47,14 +46,17 @@ class VisitsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = true
+        getData()
+        
+        setupViews()
+    }
+    
+    func getData() {
         
         visitsViewModel.getTravels { result in
             self.dizi.append(contentsOf: result.data.travels)
             self.collectionView.reloadData()
         }
-
-        setupViews()
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,6 +65,8 @@ class VisitsVC: UIViewController {
     }
     
     func setupViews() {
+        
+        self.navigationController?.navigationBar.isHidden = true
         
         self.view.backgroundColor = Color.turquoise.color
         

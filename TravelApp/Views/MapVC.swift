@@ -20,20 +20,29 @@ class MapVC: UIViewController {
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(getLocationWithLongPress))
         mapView.addGestureRecognizer(longPressGesture)
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = locationCoordinate
-//        annotation.title = travelDetails.location
-//        mapView.addAnnotation(annotation)
+        
         let region = MKCoordinateRegion(center: locationCoordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
         mapView.setRegion(region, animated: true)
         
         return mapView
     }()
     
-    @objc func getLocationWithLongPress() {
+    @objc func getLocationWithLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state == .began {
+            
+            let touchPoint = gestureRecognizer.location(in: mapView)
+            let coordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            mapView.addAnnotation(annotation)
+            
         
-        
+            present(AddNewPlaceVC(), animated: true)
+            
+        }
     }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

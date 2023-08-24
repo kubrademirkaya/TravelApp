@@ -140,9 +140,9 @@ class SignUpVC: UIViewController {
     private lazy var buttonLogin: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 342, height: 54)
-        
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Login", for: .normal)
+        button.titleLabel?.font = UIFont(name: Font.poppinsSemiBold.font, size: 16)
         button.roundCorners(corners: [.bottomLeft,.topLeft,.topRight], radius: 16)
         button.addTarget(self, action: #selector(buttonLoginTapped), for: .touchUpInside)
         button.isEnabled = false
@@ -184,8 +184,6 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = true
-
         setupViews()
         
     }
@@ -200,6 +198,8 @@ class SignUpVC: UIViewController {
     }
     
     func setupViews() {
+        
+        self.navigationController?.navigationBar.isHidden = true
         
         self.view.backgroundColor = Color.turquoise.color
         

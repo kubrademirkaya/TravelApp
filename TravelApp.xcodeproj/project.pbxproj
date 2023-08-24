@@ -41,6 +41,7 @@
 		E072C2712A9644A800FE1872 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2702A9644A800FE1872 /* Router.swift */; };
 		E072C2742A974E7E00FE1872 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E072C2732A974E7E00FE1872 /* SwiftyJSON */; };
 		E072C2762A976C3000FE1872 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2752A976C3000FE1872 /* MapCollectionViewCell.swift */; };
+		E072C2782A97842500FE1872 /* AddNewPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072C2772A97842500FE1872 /* AddNewPlaceVC.swift */; };
 		E07324FA2A9397F900F142CF /* VisitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		E072C26D2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E072C2702A9644A800FE1872 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E072C2752A976C3000FE1872 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
+		E072C2772A97842500FE1872 /* AddNewPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlaceVC.swift; sourceTree = "<group>"; };
 		E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				E072C2692A94CB0600FE1872 /* VisitsDetailsVC.swift */,
 				E07324F92A9397F900F142CF /* VisitsCollectionViewCell.swift */,
 				E072C26D2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift */,
+				E072C2772A97842500FE1872 /* AddNewPlaceVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				E015DF902A92BFE8002E8B46 /* SignUpVC.swift in Sources */,
 				E015DF982A931EA2002E8B46 /* VisitsVC.swift in Sources */,
 				E015DF772A8F583F002E8B46 /* LoginViewModel.swift in Sources */,
+				E072C2782A97842500FE1872 /* AddNewPlaceVC.swift in Sources */,
 				E072C26E2A94CF0B00FE1872 /* VisitsDetailsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

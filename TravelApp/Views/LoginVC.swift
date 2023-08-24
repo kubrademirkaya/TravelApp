@@ -98,6 +98,7 @@ class LoginVC: UIViewController {
         button.backgroundColor = Color.turquoise.color
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Login", for: .normal)
+        button.titleLabel?.font = UIFont(name: Font.poppinsSemiBold.font, size: 16)
         button.addTarget(self, action: #selector(buttonLoginTapped), for: .touchUpInside)
         return button
     }()
