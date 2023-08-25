@@ -11,10 +11,12 @@ import SwiftyJSON
 
 enum Router: URLRequestConvertible {
     
+    //Base URL alınıyor
     var baseURL: URL {
         return URL(string: "https://api.iosclass.live")!
     }
     
+    //Keychain'den access-token okunarak değişkene atanıyor
     var token: String {
         guard let token = readFromKeychain() else { return ""}
         return token
@@ -35,49 +37,84 @@ enum Router: URLRequestConvertible {
         return temp
     }
     
-    case postLogIn(parameters: [String:Any])
-    case postRegister(parameters: [String:Any])
-    case getTravels
+    //Router case'leri oluşturuluyor
+    case postLogIn(parameters: Parameters)
+    case postRegister(parameters: Parameters)
+    //case postUpload
+    //Place
+    case postPlace(parameters: Parameters)
+    case getAllPlaces(parameters: Parameters)
+    case getPlaceByID(placeId: String)
+    case getAllPlacesForUser(parameters: Parameters)
+    //Gallery
+    case postImage(parameters: Parameters)
+    case getAllImagesbyPlaceID(placeId: String)
+    //Visit
+    case postVisit(parameters: Parameters)
+    case getVisits(parameters: Parameters)
+    case getVisitByID(visitId : String)
     
     
+    
+    //Path değişkeni case'lere göre değerleri belirleniyor
     var path: String {
         switch self {
         case .postLogIn(_):
             return "/v1/auth/login"
         case .postRegister(_):
             return "/v1/auth/register"
-        case .getTravels:
-            return "/v1/travels?page=1&limit=10"
+//        case .postUpload:
+//            return "/upload"
+        case .postPlace, .getAllPlaces:
+            return "/v1/places"
+        case .getPlaceByID(let placeId):
+            return "/v1/places/\(placeId)"
+        case .getAllPlacesForUser:
+            return "/v1/places/user"
+        case .postImage:
+            return "/v1/galleries"
+        case .getAllImagesbyPlaceID(let placeId):
+            return "/v1/galleries\(placeId)"
+        case .postVisit, .getVisits:
+            return "/v1/visits"
+        case .getVisitByID(let visitId):
+            return "/v1/visits\(visitId)"
         }
     }
     
+    //Method değişkeni case'lere göre değerleri belirleniyor
     var method: HTTPMethod {
         switch self {
-        case .postLogIn, .postRegister:
+        case .postLogIn, .postRegister, .postPlace, .postImage, .postVisit:
             return .post
-        case .getTravels:
+        case .getAllPlaces, .getPlaceByID, .getAllPlacesForUser, .getAllImagesbyPlaceID, .getVisits, .getVisitByID:
             return .get
         }
     }
     
+    //
     var parameters: Parameters? {
         switch self {
-        case .postLogIn(let parameters), .postRegister(let parameters):
+        case .postLogIn(let parameters), .postRegister(let parameters), .postPlace(let parameters), .postImage(let parameters), .postVisit(let parameters):
             return parameters
         default:
             return [:]
         }
     }
     
+    
+    //Headers değişkeni case'lere göre değerleri belirleniyor
     var headers: HTTPHeaders {
         switch self {
-        case .postLogIn, .postRegister:
+        case .postLogIn, .postRegister, .getAllPlaces, .getPlaceByID, .getAllImagesbyPlaceID:
             return [:]
-        case .getTravels:
+        case .postPlace, .getAllPlacesForUser, .postImage, .postVisit, .getVisits, .getVisitByID:
             return ["Authorization" : "Bearer \(token)"]
         }
     }
     
+    
+    //API isteği oluşturan fonksiyon hazırlanıyor
     public func asURLRequest() throws -> URLRequest {
         let url = baseURL.appendingPathComponent(path)
         var request = URLRequest(url: url)

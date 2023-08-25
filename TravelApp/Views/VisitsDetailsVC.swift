@@ -64,12 +64,21 @@ class VisitsDetailsVC: UIViewController {
     private lazy var labelLocationName: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Font.poppinsSemiBold.font, size: 30)
+        label.textColor = Color.darkGray.color
         return label
     }()
     
     private lazy var labelVisitDate: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Font.poppinsRegular.font, size: 14)
+        label.textColor = Color.darkGray.color
+        return label
+    }()
+    
+    private lazy var labelAddedBy: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: Font.poppinsRegular.font, size: 14)
+        label.textColor = Color.lightGray.color
         return label
     }()
     
@@ -154,6 +163,7 @@ class VisitsDetailsVC: UIViewController {
         
         viewScrollView.addSubviews(labelLocationName,
                                    labelVisitDate,
+                                   labelAddedBy,
                                    mapView,
                                    labelInformation)
         
@@ -192,15 +202,20 @@ class VisitsDetailsVC: UIViewController {
             label.leading.equalToSuperview().offset(26)
         }
         
+        labelAddedBy.snp.makeConstraints { label in
+            label.top.equalTo(labelVisitDate.snp.bottom)
+            label.leading.equalTo(labelVisitDate.snp.leading)
+        }
+        
         mapView.snp.makeConstraints { mapView in
-            mapView.top.equalTo(labelVisitDate.snp.bottom).offset(24)
+            mapView.top.equalTo(labelAddedBy.snp.bottom).offset(9)
             mapView.leading.equalToSuperview().offset(16)
             mapView.trailing.equalToSuperview().offset(-16)
             mapView.height.equalTo(227)
         }
         
         labelInformation.snp.makeConstraints { label in
-            label.top.equalToSuperview().offset(365)
+            label.top.equalTo(mapView.snp.bottom).offset(24)
             label.bottom.equalToSuperview().offset(22)
             label.leading.equalToSuperview().offset(16)
             label.trailing.equalToSuperview().offset(-16)

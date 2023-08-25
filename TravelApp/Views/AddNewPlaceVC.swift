@@ -95,8 +95,8 @@ class AddNewPlaceVC: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 0
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = Color.lightGray.color
@@ -104,9 +104,10 @@ class AddNewPlaceVC: UIViewController {
         cv.dataSource = self
         cv.isPagingEnabled = true
         cv.showsHorizontalScrollIndicator = false
-        cv.register(MapCollectionViewCell.self, forCellWithReuseIdentifier: "MapCollectionViewCell")
-        cv.backgroundColor = Color.lightGray.color
+        cv.register(AddNewPlaceCollectionViewCell.self, forCellWithReuseIdentifier: "AddNewPlaceCollectionViewCell")
+        cv.backgroundColor = .clear
         cv.contentInsetAdjustmentBehavior = .never
+    
         
         return cv
     }()
@@ -224,8 +225,8 @@ class AddNewPlaceVC: UIViewController {
         
         collectionView.snp.makeConstraints { collectionView in
             collectionView.top.equalTo(viewTextCountryCity.snp.bottom).offset(16)
-            collectionView.leading.equalTo(viewTextCountryCity.snp.leading)
-            collectionView.trailing.equalTo(viewTextCountryCity.snp.trailing)
+            collectionView.leading.equalToSuperview().offset(24)
+            collectionView.trailing.equalToSuperview()
             collectionView.bottom.equalToSuperview().offset(-94)
         }
         
@@ -242,18 +243,18 @@ class AddNewPlaceVC: UIViewController {
 extension AddNewPlaceVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapCollectionViewCell", for: indexPath) as? MapCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddNewPlaceCollectionViewCell", for: indexPath) as? AddNewPlaceCollectionViewCell else { return UICollectionViewCell() }
         
-        
+        cell.roundCorners(corners: [.bottomLeft,.topLeft,.topRight], radius: 16)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: view.frame.width, height: 215)
+        let size = CGSize(width: 269, height: 215)
         return size
     }
 }

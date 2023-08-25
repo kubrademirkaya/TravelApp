@@ -27,6 +27,29 @@ class MapVC: UIViewController {
         return mapView
     }()
     
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 0
+        
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = Color.lightGray.color
+        cv.delegate = self
+        cv.dataSource = self
+        cv.isPagingEnabled = true
+        cv.showsHorizontalScrollIndicator = false
+        cv.register(MapCollectionViewCell.self, forCellWithReuseIdentifier: "MapCollectionViewCell")
+        cv.backgroundColor = .clear
+        cv.contentInsetAdjustmentBehavior = .never
+    
+        
+        return cv
+    }()
+    
+    
+    
+    
     @objc func getLocationWithLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
         if gestureRecognizer.state == .began {
             
@@ -52,7 +75,7 @@ class MapVC: UIViewController {
     
     func setupViews() {
         
-        self.view.addSubviews(mapView)
+        self.view.addSubviews(mapView,collectionView)
         
         setupLayout()
     }
@@ -62,6 +85,13 @@ class MapVC: UIViewController {
         mapView.snp.makeConstraints { mapView in
             mapView.edges.equalToSuperview()
         }
+        
+        collectionView.snp.makeConstraints { collectionView in
+            collectionView.top.equalToSuperview().offset(565)
+            collectionView.leading.equalToSuperview().offset(18)
+            collectionView.trailing.equalToSuperview()
+            collectionView.bottom.equalToSuperview().offset(-101)
+        }
     }
 
 }
@@ -69,3 +99,23 @@ class MapVC: UIViewController {
 extension MapVC: MKMapViewDelegate {
     
 }
+
+extension MapVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapCollectionViewCell", for: indexPath) as? MapCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.roundCorners(corners: [.bottomLeft,.topLeft,.topRight], radius: 16)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = CGSize(width: 309, height: 178)
+        return size
+    }
+}
+
