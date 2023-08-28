@@ -30,6 +30,20 @@ class SignUpViewModel {
         })
     }
     
-    
+    func registerRouter(user: User) {
+        
+        let param: Parameters = [ "full_name" : user.full_name,
+                                  "email" : user.email,
+                                  "password": user.password]
+        
+        NetworkingHelper.shared.objectRequestRouter(request: Router.postRegister(parameters: param), callback: {(result: Result<Response, Error>) in
+            switch result {
+            case .success(let user):
+                print(user)
+            case .failure(let error):
+                print(error)
+            }
+        })
+    }
     
 }

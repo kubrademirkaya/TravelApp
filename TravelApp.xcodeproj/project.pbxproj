@@ -178,8 +178,8 @@
 			children = (
 				E015DF762A8F583F002E8B46 /* LoginViewModel.swift */,
 				E015DF742A8F583B002E8B46 /* SignUpViewModel.swift */,
-				E015DF782A8F5844002E8B46 /* UserViewModel.swift */,
 				E072C2672A948E8100FE1872 /* VisitsViewModel.swift */,
+				E015DF782A8F5844002E8B46 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
